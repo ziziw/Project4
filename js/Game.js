@@ -111,7 +111,23 @@ class Game {
     }
   };
 
-  handleInteraction(){
+  /**
+  * Handles onscreen keyboard button clicks
+  * @param (HTMLButtonElement) button - The clicked button element
+  */
+  handleInteraction(button){
+    const currLetter = button.innerText;
+    button.disabled = true;
 
+    if(this.activePhrase.checkLetter(currLetter)){
+      button.classList.add('chosen');
+      this.activePhrase.showMatchedLetter(currLetter);
+      if(this.checkForWin()){
+        this.gameOver(this.checkForWin());
+      }
+    } else {
+      button.classList.add('wrong');
+      this.removeLife();
+    }
   }
 }

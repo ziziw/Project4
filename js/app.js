@@ -9,9 +9,7 @@ startBtn.addEventListener('click', () => {
 
   keySection.addEventListener('click', (event) => {
     if (event.target.className === 'key'){
-      const currLetter = event.target.innerText;
-
-      game.handleInteraction();
+      game.handleInteraction(event.target);
     }
   });
 });
