@@ -72,9 +72,7 @@ class Game {
   checkForWin(){
     const hideLis = document.querySelectorAll('.hide');
 
-    //console.log(hideLis.length === 0);
     return hideLis.length === 0;
-
   };
 
   /**
@@ -85,11 +83,12 @@ class Game {
   removeLife(){
     const triesImgs = document.querySelectorAll('.tries img');
 
+    console.log(this.missed);
 
     triesImgs[this.missed].src = "images/lostHeart.png";
     this.missed += 1;
 
-    if(this.missed === 5){
+    if(this.missed === triesImgs.length){
       this.gameOver(false);
     }
   };

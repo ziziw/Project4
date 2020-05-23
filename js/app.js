@@ -1,13 +1,23 @@
-let game;
-
 const startBtn = document.querySelector('#btn__reset');
 const keySection = document.querySelector('#qwerty');
 const phraseUl = document.querySelector('#phrase ul');
 const keys = document.querySelectorAll('.key');
 const images = document.querySelectorAll('.tries img');
+const overlayDiv = document.querySelector('#overlay');
+
+let game;
 
 startBtn.addEventListener('click', () => {
+  startNewGame();
+});
 
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter' && overlayDiv.style.display !== 'none'){
+    startNewGame();
+  }
+});
+
+const startNewGame = () => {
   while(phraseUl.firstChild){
     phraseUl.removeChild(phraseUl.lastChild);
   }
@@ -30,5 +40,11 @@ startBtn.addEventListener('click', () => {
     }
   });
 
-
-});
+  document.addEventListener('keyup', (event) => {
+    keys.forEach(key => {
+      if(key.innerText === event.key && !key.disabled){
+        game.handleInteraction(key);
+      }
+    });
+  });
+}
