@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-color: #71da71;
 }
 
 li, ol, ul {
@@ -48,7 +49,7 @@ h1 {
 
 button {
   margin: 6px;
-  border: 1px solid transparent;
+  border: 1px solid black;
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
@@ -58,6 +59,7 @@ button {
   -o-transition: var(--transition);
   transition: var(--transition);
   cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #btn__reset {
@@ -99,8 +101,9 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background: #f2f2f2;
   border-radius: 5px;
+  border: 1px solid black;
 }
 
 .space {
@@ -111,7 +114,8 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #113321;
+  /*background-color: #4ac0d5;*/
   font-size: 20px;
   height: 65px;
   width: 65px;
