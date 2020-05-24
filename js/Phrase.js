@@ -1,4 +1,3 @@
-//https://drive.google.com/file/d/1r1oBLk7w5KXnQRBuPmVo0EDNeY_I7EjW/view
 class Phrase {
   constructor(phrase){
     this._phrase = phrase;
