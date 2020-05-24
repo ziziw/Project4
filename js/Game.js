@@ -82,8 +82,6 @@ class Game {
   removeLife(){
     const triesImgs = document.querySelectorAll('.tries img');
 
-    console.log(this.missed);
-
     triesImgs[this.missed].src = "images/lostHeart.png";
     this.missed += 1;
 
